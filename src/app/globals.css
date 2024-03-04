@@ -4,56 +4,66 @@
 
 @layer base {
   :root {
-    --background: 255, 255, 255; /* Updated to your background-color */
-    --foreground: 50, 55, 60; /* Updated to your secondary-color */
-    --card: 255, 255, 255; /* Assuming same as background */
-    --card-foreground: 50, 55, 60; /* Assuming same as foreground */
-    --popover: 255, 255, 255; /* Assuming same as background */
-    --popover-foreground: 50, 55, 60; /* Assuming same as foreground */
-    --primary: 255, 117, 0; /* Updated to your primary-color */
-    --primary-foreground: 255, 255, 255; /* Assuming white for contrast */
-    --secondary: 50, 55, 60; /* Updated to your secondary-color */
-    --secondary-foreground: 255, 255, 255; /* Assuming white for contrast */
-    --muted: 247, 141, 167; /* Updated to your accent-color */
-    --muted-foreground: 50, 55, 60; /* Assuming secondary color for contrast */
-    --accent: 247, 141, 167; /* Updated to your accent-color */
-    --accent-foreground: 50, 55, 60; /* Assuming secondary color for contrast */
-    --destructive: 255, 117, 0; /* Assuming primary color for destructive actions */
-    --destructive-foreground: 255, 255, 255; /* Assuming white for contrast */
-    --border: 204, 204, 204; /* Assuming a light grey for borders */
-    --input: 204, 204, 204; /* Assuming a light grey for input borders */
-    --ring: 255, 117, 0; /* Assuming primary color for focus rings */
-    --radius: 0.25rem; /* Assuming a slight border-radius for elements */
+    --primary-color: #ff7500; /* Bright orange */
+    --secondary-color: #32373c; /* Deep grey */
+    --background-color: #ffffff; /* White */
+    --card-color: #f0f0f0; /* Light grey for card backgrounds */
+    --button-color: #ff7500; /* Bright orange for buttons */
+    --button-text-color: #ffffff; /* White for button text */
+    --border-color: #dddddd; /* Light grey for borders */
+    --footer-background-color: #40403f; /* Dark grey for footer */
+    --text-color: #32373c; /* Deep grey for text */
   }
 
-  .dark {
-    --background: 64, 64, 63; /* Updated to your footer-background-color */
-    --foreground: 239, 239, 239; /* Assuming a light grey for dark mode text */
-    --card: 64, 64, 63; /* Assuming footer-background-color for dark mode cards */
-    --card-foreground: 239, 239, 239; /* Assuming a light grey for dark mode card text */
-    --popover: 64, 64, 63; /* Assuming footer-background-color for dark mode popovers */
-    --popover-foreground: 239, 239, 239; /* Assuming a light grey for dark mode popover text */
-    --primary: 255, 117, 0; /* Assuming same primary color for dark mode */
-    --primary-foreground: 50, 55, 60; /* Assuming secondary color for contrast in dark mode */
-    --secondary: 50, 55, 60; /* Updated to your secondary-color for dark mode */
-    --secondary-foreground: 255, 255, 255; /* Assuming white for contrast in dark mode */
-    --muted: 247, 141, 167; /* Updated to your accent-color for dark mode */
-    --muted-foreground: 50, 55, 60; /* Assuming secondary color for contrast in dark mode */
-    --accent: 247, 141, 167; /* Updated to your accent-color for dark mode */
-    --accent-foreground: 50, 55, 60; /* Assuming secondary color for contrast in dark mode */
-    --destructive: 255, 117, 0; /* Assuming primary color for destructive actions in dark mode */
-    --destructive-foreground: 255, 255, 255; /* Assuming white for contrast in dark mode */
-    --border: 50, 55, 60; /* Assuming secondary color for borders in dark mode */
-    --input: 50, 55, 60; /* Assuming secondary color for input borders in dark mode */
-    --ring: 255, 117, 0; /* Assuming primary color for focus rings in dark mode */
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
   body {
-    @apply bg-background text-foreground;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: Arial, sans-serif; /* Common web-safe sans-serif font */
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--secondary-color);
+    font-family: Arial, sans-serif; /* Matching the body font for headers */
+  }
+
+  a {
+    color: var(--secondary-color);
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: var(--primary-color);
+  }
+
+  button, .button {
+    background-color: var(--button-color);
+    color: var(--button-text-color);
+    padding: 10px 45px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: darken(var(--button-color), 10%);
+  }
+
+  input, textarea {
+    border: 1px solid var(--border-color);
+    padding: 10px;
+  }
+
+  input:focus, textarea:focus {
+    border-color: var(--primary-color);
+  }
+
+  header {
+    background-color: transparent;
+  }
+
+  footer {
+    background-color: var(--footer-background-color);
+    color: #efefef;
+    padding: 50px 15px;
   }
 }
